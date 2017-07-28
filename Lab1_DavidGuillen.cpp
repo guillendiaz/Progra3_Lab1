@@ -42,7 +42,7 @@ int main(){
 				cin>>ladoB;
 				cout<<"Ingrese Ángulo: ";
 				cin>>angulo;
-				cout<<"Lado A: "<<ladoA<<"Lado B: "<<ladoB<<"Lado C: "<<" Ángulo A: "<<angulo1<<" Ángulo B: "<< Ejercicio3AnguloB(ladoA, ladoB, angulo1)<<endl;	
+				cout<<"Lado A: "<<ladoA<<" Lado B: "<<ladoB<<"Lado C: "<<" Ángulo A: "<<angulo1<<" Ángulo B: "<< Ejercicio3AnguloB(ladoA, ladoB, angulo1)<<" Ángulo C: "<<endl;	
 		}//switch
 	}while(opcion != 4);
 	return 0;
@@ -101,5 +101,4 @@ double Ejercicio3AnguloB(int a, int b, double angulo){
 	double  anguloc = 0;
 	anguloc = (b * Ejercicio2Seno(angulo)) / a;
 	return anguloc;
-}//Ejercicio3AnguloB
-
+}//Ejercicio3AnguloBC
