@@ -60,8 +60,8 @@ double Ejercicio1(int x1, int x2, int y1, int y2){
 		return valor;
 }//Ejercicio1()
 
-int FuncionFac(int numero){
-	if(numero == 0){
+long FuncionFac(int numero){
+	if(numero == 0 || numero == 1){
 		return 1;
 	}else{
 		return numero * FuncionFac(numero-1);
@@ -71,7 +71,7 @@ int FuncionFac(int numero){
 double Ejercicio2Seno(double angulo){
 	double radian = (angulo / 180) * 3.141592;
 	double valor = 0;
-	for(int i=0 ; i <= 20 ; i++){
+	for(int i=0 ; i <= 10 ; i++){
 		valor+= (pow(-1, i) / FuncionFac((2*i)+1)) * pow(radian, ((2*i)+1));
 	}//for
 	return valor;
@@ -80,9 +80,8 @@ double Ejercicio2Seno(double angulo){
 double Ejercicio2Coseno(double angulo){
 	double radian = (angulo / 180) * 3.141592;
 	int valor=0;
-	for(int i = 0 ; i<= 20 ; i++){
-		valor+= (pow(-1, i) / FuncionFac((2*i))) * pow(radian, (2*i));
-		cout<<valor;
+	for(int i = 0 ; i<= 10 ; i++){
+		valor+= (pow(-1, i) / FuncionFac(2*i)) * pow(radian, (2*i));
 	}//for
 	return valor;
 }//Ejercicio2Coseno
