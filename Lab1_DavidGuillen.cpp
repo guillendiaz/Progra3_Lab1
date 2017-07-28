@@ -7,6 +7,7 @@ int Menu();
 double Ejercicio1(int, int, int, int);
 double Ejercicio2Seno(double);
 double Ejercicio2Coseno(double);
+double Ejercicio3AnguloB(int, int, double);
 int main(){
 	int opcion = 0;
 	do{
@@ -31,7 +32,17 @@ int main(){
 				cout<<"Ingrese Ángulo: ";
 				cin>>angulo;
 				cout<<angulo<<" Valor en Seno: "<<Ejercicio2Seno(angulo)<<" Valor en Coseno: "<<Ejercicio2Coseno(angulo)<<endl;
-						
+			case 3:
+				double ladoA;
+				double ladoB;
+				double angulo1;
+				cout<<"Ingrese Lado A: ";
+				cin>>ladoA;
+				cout<<"Ingrese Lado B: ";
+				cin>>ladoB;
+				cout<<"Ingrese Ángulo: ";
+				cin>>angulo;
+				cout<<"Lado A: "<<ladoA<<"Lado B: "<<ladoB<<"Lado C: "<<" Ángulo A: "<<angulo1<<" Ángulo B: "<< Ejercicio3AnguloB(ladoA, ladoB, angulo1)<<endl;	
 		}//switch
 	}while(opcion != 4);
 	return 0;
@@ -84,4 +95,11 @@ double Ejercicio2Coseno(double angulo){
 		valor+= (pow(-1, i) / FuncionFac(2*i)) * pow(radian, (2*i));
 	}//for
 	return valor;
-}//Ejercicio2Coseno
+}//Ejercicio2Cosen
+
+double Ejercicio3AnguloB(int a, int b, double angulo){
+	double  anguloc = 0;
+	anguloc = (b * Ejercicio2Seno(angulo)) / a;
+	return anguloc;
+}//Ejercicio3AnguloB
+
