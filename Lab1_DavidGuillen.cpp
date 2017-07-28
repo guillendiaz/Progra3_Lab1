@@ -5,8 +5,8 @@ using namespace std;
 int Menu();
 
 double Ejercicio1(int, int, int, int);
-double Ejercicio2(int);
-double AnguloaRadian
+double Ejercicio2Seno(double);
+double Ejercicio2Coseno(double);
 int main(){
 	int opcion = 0;
 	do{
@@ -27,9 +27,10 @@ int main(){
 				cout<<"Valor es: "<<Ejercicio1(x1, x2, y1, y2)<<endl;
 				break;
 			case 2:
-				int angulo;
+				double angulo;
 				cout<<"Ingrese Ángulo: ";
 				cin>>angulo;
+				cout<<angulo<<" Valor en Seno: "<<Ejercicio2Seno(angulo)<<"Valor en Coseno: "<<Ejercicio2Coseno(angulo)<<endl;
 						
 		}//switch
 	}while(opcion != 4);
@@ -59,22 +60,9 @@ double Ejercicio1(int x1, int x2, int y1, int y2){
 		return valor;
 }//Ejercicio1()
 
-double Ejercicio2(double angulo){
-	double valor = 0;
-	for(int i=0 ; i <= 10 ; i++){
-		valor = (FuncionSenoNum(i) / FuncionSenoFac((2*i)+1))) * FuncionSenoMul(angulo, i);
-	}//for
-}//Ejercicio2()
-
-double AnguloaRadian(int angulo){
-	double valor = 0;
-	valor = (angulo / 180) * 3.14;
-	return valor
-}//AnguloaRadian()
-
 int FuncionSenoNum(int numero){
 	int ValNum = -1;
-	for(int i=0 ; int <= numero ; i++){
+	for(int i=0 ; i <= numero ; i++){
 		ValNum*= -1;
 	}//for
 	return ValNum;
@@ -95,3 +83,12 @@ double FuncionSenoMul(double angulo, int exp){
 	}//for
 	return valor;
 }//FuncionSenoMul()
+
+double Ejercicio2(double angulo){
+	double radian = (angulo / 180) * 3.141526;
+	double valor = 0;
+	for(int i=0 ; i <= 20 ; i++){
+		valor+= (pow(-1, i) / FuncionSenoFac((2*i)+1)) * pow(radian, ((2*i)+1));
+	}//for
+	return valor;
+}//Ejercicio2()
